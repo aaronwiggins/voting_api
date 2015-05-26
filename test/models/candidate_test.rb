@@ -1,10 +1,6 @@
 require 'test_helper'
 
 class CandidateTest < ActiveSupport::TestCase
-  test "the truth" do
-    assert true
-  end
-
   test "create candidate" do
     bill = Candidate.new(name: "Bill Murray", hometown: "Evanston, IL", district: "13")
     refute bill.save
