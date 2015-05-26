@@ -1,6 +1,6 @@
-class CreateCanidates < ActiveRecord::Migration
+class CreateCandidates < ActiveRecord::Migration
   def change
-    create_table :canidates do |t|
+    create_table :candidates do |t|
       t.string :name
       t.string :hometown
       t.string :district

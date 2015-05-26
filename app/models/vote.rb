@@ -1,6 +1,6 @@
 class Vote < ActiveRecord::Base
   has_many :voters
-  belongs_to :canidate
+  belongs_to :candidate
 
-  validates :canidate_id, :voter_id, presence: true
+  validates :candidate_id, :voter_id, presence: true
 end

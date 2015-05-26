@@ -13,7 +13,7 @@
 
 ActiveRecord::Schema.define(version: 20150526175947) do
 
-  create_table "canidates", force: :cascade do |t|
+  create_table "candidates", force: :cascade do |t|
     t.string   "name"
     t.string   "hometown"
     t.string   "district"
@@ -30,10 +30,10 @@ ActiveRecord::Schema.define(version: 20150526175947) do
   end
 
   create_table "votes", force: :cascade do |t|
-    t.integer  "canidate_id"
+    t.integer  "candidate_id"
     t.integer  "voter_id"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
   end
 
 end
