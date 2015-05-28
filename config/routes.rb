@@ -1,4 +1,18 @@
 Rails.application.routes.draw do
+  namespace :api, defaults: {format: 'json'} do
+    namespace :v1 do
+      resources :candidates
+      resources :voters
+      resources :votes
+    end
+  end
+
+  get 'voters/create'
+
+  get 'voters/show'
+
+  get 'voters/update'
+
   get 'candidates/index'
 
   get 'votes/index'
