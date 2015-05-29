@@ -5,7 +5,7 @@ Create an API using Rails. Users will be allowed to vote for candidates.
 
 ###Objectives
 Build a Rails-based application which serves up an API responding with JSON.
-There is a Candidates, Voters, and Votes tables. Each are created with associations
+There is a Candidates, Voters, and Votes table. Each are created with associations
 and validations. When voters are created, they are given a token for authentication.
 These tokens need to be used when creating or destorying a vote.
 
