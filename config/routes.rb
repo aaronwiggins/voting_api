@@ -7,21 +7,28 @@ Rails.application.routes.draw do
     end
   end
 
+  # get '/api/v1/voters/create'
+  # get '/api/v1/voters/show'
+  # get '/api/v1/voters/update'
+  # get '/api/v1/candidates/index'
+  # get '/api/v1/votes/index'
+  # get '/api/v1/votes/candidate_id'
+  # get '/api/v1/votes/voter_id'
+  # get '/api/v1/candidates/show'
+
+
   get 'voters/create'
-
   get 'voters/show'
-
+  get 'voters/destroy'
+  get 'voters/index'
   get 'voters/update'
-
-  get 'candidates/index'
-
   get 'votes/index'
-
   get 'votes/candidate_id'
-
   get 'votes/voter_id'
-
   get 'candidates/show'
+  get 'candidates/index'
+  get 'candidates/destory'
+  get 'candidates/create'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

@@ -1,26 +1,32 @@
 class VotersController < ApplicationController
   def create
     voter = Voter.new(name: params[:name], party: params[:party])
-      if voter.save
-        render json: voter
-      else
-        render json: voter.errors
-      end
+    voter.save ? (render json: voter) : (render json: voter.errors)
   end
 
-  # before_filter :restrict_access
+  def index
+    render json: Voter.all
+  end
+
 
   def show
-    render json: Voter.find_by_id(params[:id])
+    voter = Voter.find_by_id(params[:id])
+    if voter.token == params[:token]
+      render json: voter
+    else
+      render json: "Invalid token"
+    end
   end
 
-  def update
-    render json: Voter.find_by_id(params[:id]).update_attributes(name: params[:name], party: params[:party])
+  # def update
+  #   render json: Voter.find_by_id(params[:id])
+  #   if
+  #     update_attributes(name: params[:name], party: params[:party])
+  # end
+
+  def destroy
+    Voter.delete(params[:id])
+    render json: "The voter has been deleted"
   end
 
-  # private
-  #   def restrict_access
-  #     api_key = ApiKey.find_by_access_token(params[:access_token])
-  #     head :unauthorized unless api_key
-  #   end
 end

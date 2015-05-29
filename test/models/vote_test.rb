@@ -10,7 +10,7 @@ class VoteTest < ActiveSupport::TestCase
   end
 
   test "check validation, uniqueness" do
-    vote_one = Vote.create(candidate_id: 1, voter_id: 3)
+    vote_one = Vote.create!(candidate_id: 1, voter_id: 3)
     vote_two = Vote.new(candidate_id: 2, voter_id: 3)
 
     refute vote_two.save
